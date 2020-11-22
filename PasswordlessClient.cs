@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace System.Net.Http
 {
-    public static class PasswordlessHelper
+    public static class PasswordlessClient
     {
         /// <summary>
         /// The base URL. Can be changed for testing/self-hosting purposes.
@@ -126,7 +126,7 @@ namespace System.Net.Http
     public class PasswordlessVerifyTokenParameters
     {
         [JsonIgnore]
-        public string ApiUrl { get; set; } = PasswordlessHelper.ApiUrl + "signin/verify";
+        public string ApiUrl { get; set; } = PasswordlessClient.ApiUrl + "signin/verify";
         [JsonIgnore]
         public string ApiSecret { get; set; }
         public string Token { get; set; }
@@ -142,7 +142,7 @@ namespace System.Net.Http
     public class PasswordlessGetCredentialParameters
     {
         [JsonIgnore]
-        public string ApiUrl { get; set; } = PasswordlessHelper.ApiUrl + "credentials/list";
+        public string ApiUrl { get; set; } = PasswordlessClient.ApiUrl + "credentials/list";
         [JsonIgnore]
         public string ApiSecret { get; set; }
         public string Username { get; set; }
@@ -158,7 +158,7 @@ namespace System.Net.Http
     public class PasswordlessDeleteCredentialParameters
     {
         [JsonIgnore]
-        public string ApiUrl { get; set; } = PasswordlessHelper.ApiUrl + "credentials/delete";
+        public string ApiUrl { get; set; } = PasswordlessClient.ApiUrl + "credentials/delete";
         [JsonIgnore]
         public string ApiSecret { get; set; }
         public string CredentialId { get; set; }
@@ -182,7 +182,7 @@ namespace System.Net.Http
         [JsonIgnore]
         public string ApiSecret { get; set; }
         [JsonIgnore]
-        public string ApiUrl { get; set; } = PasswordlessHelper.ApiUrl + "register/token";
+        public string ApiUrl { get; set; } = PasswordlessClient.ApiUrl + "register/token";
 
         public string Username { get; set; }
         public string Displayname { get; set; } = "Test";
